@@ -26,6 +26,9 @@ namespace shiny {
             }
             return counter;
         }
+        void pushFront(const dataType& data) {
+            m_root = new Node {data, m_root};
+        }
         void pushBack(const dataType& data) {
             if(m_root == nullptr) {
                 m_root = new Node {data, nullptr};
@@ -36,6 +39,11 @@ namespace shiny {
                 cursor = cursor->next;
 
             cursor->next = new Node {data, nullptr};
+        }
+        void popFront() {
+            Node* temp = m_root->next;
+            delete m_root;
+            m_root = temp;
         }
         void popBack() {
             if(m_root->next == nullptr) {
