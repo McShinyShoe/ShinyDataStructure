@@ -26,6 +26,20 @@ namespace shiny {
             }
             return counter;
         }
+        Node* at(size_t index) {
+            Node* cursor = m_root;
+            while(cursor != nullptr && index--)
+                cursor = cursor->next;
+            
+            return cursor;
+        }
+        const Node* at(size_t index) const {
+            Node* cursor = m_root;
+            while(cursor != nullptr && index--)
+                cursor = cursor->next;
+            
+            return cursor;
+        }
         void pushFront(const dataType& data) {
             m_root = new Node {data, m_root};
         }
