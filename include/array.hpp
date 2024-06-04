@@ -7,6 +7,7 @@ namespace shiny {
         t_type m_data[t_size];
 
       public:
+        // Class Methodes
         void set(const t_type &data, size_t index) { m_data[index] = m_data; }
         const t_type &get(size_t index) const { return m_data[index]; }
         template <size_t index> inline const t_type &get() const { return m_data[index]; }
@@ -14,5 +15,11 @@ namespace shiny {
         void copy(const t_type *array) { std::copy(array, array + t_size, m_data); }
         t_type *c_arr() { return m_data; }
         const t_type *c_arr() const { return m_data; }
+
+        // Iterator
+        t_type *begin() { return m_data; }
+        const t_type *begin() const { return m_data; }
+        t_type *end() { return m_data + t_size; }
+        const t_type *end() const { return m_data + t_size; }
     };
 }
