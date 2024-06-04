@@ -12,6 +12,7 @@ namespace shiny {
         void set(const t_type &data, size_t index) { m_data[index] = m_data; }
         const t_type &get(size_t index) const { return m_data[index]; }
         template <size_t index> inline const t_type &get() const { return m_data[index]; }
+        template <size_t index> inline void set(const t_type &data) { m_data[index] = data; }
         void fill(const t_type &data) { std::fill(m_data, m_data + t_size, data); }
         void copy(const t_type *array) { std::copy(array, array + t_size, m_data); }
         t_type *c_arr() { return m_data; }
