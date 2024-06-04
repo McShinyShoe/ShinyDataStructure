@@ -26,6 +26,7 @@ namespace shiny {
         t_type *c_arr() { return m_data; }
         const t_type *c_arr() const { return m_data; }
         size_t size() { return t_size; };
+        bool empty() { return size() == 0; };
 
         // Iterator>
         t_type *begin() { return m_data; }
