@@ -3,12 +3,14 @@
 // LinearData
 namespace shiny {
     template <typename t_type, size_t t_size> class Array {
+      public:
+        typedef t_type data_type;
+
       private:
         t_type m_data[t_size];
 
       public:
         // Class Methodes
-        typedef t_type data_type;
         void set(const t_type &data, size_t index) { m_data[index] = m_data; }
         const t_type &get(size_t index) const { return m_data[index]; }
         template <size_t index> inline const t_type &get() const { return m_data[index]; }
