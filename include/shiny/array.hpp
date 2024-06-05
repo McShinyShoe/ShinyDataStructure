@@ -11,27 +11,27 @@ namespace shiny {
 
       public:
         // Class Methodes
-        void set(const t_type &data, size_t index) { m_data[index] = m_data; }
-        const t_type &get(size_t index) const { return m_data[index]; }
-        t_type &at(size_t index) { return m_data[index]; }
-        const t_type &at(size_t index) const { return m_data[index]; }
-        t_type &front() { return at(0); }
-        const t_type &front() const { at(0); }
-        t_type &back() { return at(t_size - 1); }
-        const t_type &back() const { at(t_size - 1); }
-        template <size_t index> inline const t_type &get() const { return m_data[index]; }
+        inline void set(const t_type &data, size_t index) { m_data[index] = m_data; }
         template <size_t index> inline void set(const t_type &data) { m_data[index] = data; }
-        void fill(const t_type &data) { std::fill(m_data, m_data + t_size, data); }
-        void copy(const t_type *array) { std::copy(array, array + t_size, m_data); }
-        t_type *c_arr() { return m_data; }
-        const t_type *c_arr() const { return m_data; }
-        size_t size() { return t_size; };
-        bool empty() { return size() == 0; };
+        inline t_type &at(size_t index) { return m_data[index]; }
+        inline t_type &front() { return at(0); }
+        inline t_type &back() { return at(t_size - 1); }
+        inline t_type *c_arr() { return m_data; }
+        template <size_t index> inline const t_type &get() const { return m_data[index]; }
+        inline const t_type &get(size_t index) const { return m_data[index]; }
+        inline const t_type &at(size_t index) const { return m_data[index]; }
+        inline const t_type &front() const { at(0); }
+        inline const t_type &back() const { at(t_size - 1); }
+        inline const t_type *c_arr() const { return m_data; }
+        inline void fill(const t_type &data) { std::fill(m_data, m_data + t_size, data); }
+        inline void copy(const t_type *array) { std::copy(array, array + t_size, m_data); }
+        inline size_t size() { return t_size; };
+        inline bool empty() { return size() == 0; };
 
         // Iterator>
-        t_type *begin() { return m_data; }
-        const t_type *begin() const { return m_data; }
-        t_type *end() { return m_data + t_size; }
-        const t_type *end() const { return m_data + t_size; }
+        inline t_type *begin() { return m_data; }
+        inline const t_type *begin() const { return m_data; }
+        inline t_type *end() { return m_data + t_size; }
+        inline const t_type *end() const { return m_data + t_size; }
     };
 }
