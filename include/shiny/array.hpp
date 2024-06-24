@@ -14,7 +14,7 @@ namespace shiny {
         inline t_type &at(size_t index) { return m_data[index]; }
         inline t_type &front() { return at(0); }
         inline t_type &back() { return at(size() - 1); }
-        inline void set(const t_type &data, size_t index) { at(index) = m_data; }
+        inline void set(const t_type &data, size_t index) { at(index) = data; }
         inline const t_type &get(size_t index) const { return at(index); }
         inline const t_type &at(size_t index) const { return at(index); }
         inline const t_type &front() const { return front(); }
