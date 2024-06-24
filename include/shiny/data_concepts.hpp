@@ -13,7 +13,6 @@ namespace shiny {
         { constDataStructure.back() } -> std::convertible_to<const typename DataStructure::value_type>;
         { dataStructure.set(data, index) } -> std::same_as<void>;
         { constDataStructure.get(index) } -> std::convertible_to<typename DataStructure::value_type>;
-        { dataStructure.fill(data) } -> std::same_as<void>;
         { constDataStructure.size() } -> std::convertible_to<size_t>;
         { constDataStructure.empty() } -> std::same_as<bool>;
     };
